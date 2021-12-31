@@ -31,3 +31,17 @@ size     : is the default size in int type, if you don't know what size you need
 *Set the value at index index for value*<br><br>
 ```array.insert(-1, value);```<br>
 *Set the value at the last index for value*<br><br>
+
+3. Size and clear functions <br>
+```array.Size();``` <br>
+*Return the size of the array*<br><br>
+```array.Clear();```<br>
+*Reset the array to size 0 and erase all values*<br><br>
+
+4. Remove functions <br>
+```array.remove(index);``` <br>
+*Erase the value at the index from the array*<br><br>
+```array.remove(indexstart, indexend);```<br>
+*Erase all values from indexstart to indexend, including the values at indexstart and indexend*<br><br>
+```array.remove(indexstart, -1);```<br>
+*Erase all values from indexstart to the end of the array, including the values at indexstart and the last value*<br><br>

@@ -71,3 +71,60 @@ size     : is the default size in int type, if you don't know what size you need
 10. Add functions <br>
 ```array.add(array2);``` <br>
 *Add the array2 to the array*<br><br>
+
+## Code example
+
+```
+using System;
+using DynamicArray;
+
+namespace Test
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            dynamicarray<int> array = new dynamicarray<int>(5);
+            for (int i = 0; i < array.Size(); i++)
+                array.insert(i, i);
+
+            dynamicarray<int> array2 = new dynamicarray<int>(0); ;
+            array2.copy(array);
+            array2.add(array);
+
+            array2.sort();
+            array2.reverse();
+            array2.remove(6, -1);
+            array2.fill(0, 1, -3);
+            array2.push_front(-10);
+            array2.push_back(100);
+            int index = array2.find(-3);
+
+            Console.WriteLine(index);
+            for (int i = 0; i < array2.Size(); i++)
+            {
+                Console.WriteLine(array2.at(i));
+            }
+
+            array2.Clear();
+            Console.WriteLine(array2.Size());
+
+            Console.ReadKey();
+        }    
+    }
+}
+```
+
+<br>**OUTPUT:**<br>
+```
+1
+-10
+-3
+-3
+3
+3
+2
+2
+100
+0
+```

@@ -27,6 +27,7 @@ namespace DynamicArray
                 Arr[0] = value;
                 for (int i = 1; i < Arr.Length; i++)
                     Arr[i] = Temp[i - 1];
+                Temp = new T[0];
             }
             catch { throw new Exception("Invalide type of appeneded element!"); }
         }
@@ -41,6 +42,7 @@ namespace DynamicArray
                 for (int i = 0; i < Arr.Length - 1; i++)
                     Arr[i] = Temp[i];
                 Arr[Arr.Length - 1] = value;
+                Temp = new T[0];
             }
             catch { throw new Exception("Invalide type of appeneded element!"); }
         }
@@ -98,6 +100,7 @@ namespace DynamicArray
                 Arr = new T[Temp.Length - (Temp.Length - j)];
                 for (int i = 0; i < Arr.Length; i++)
                     Arr[i] = Temp[i];
+                Temp = new T[0];
             }
             catch { throw new Exception("The index is out of range!"); }
         }
@@ -123,6 +126,7 @@ namespace DynamicArray
                 Arr = new T[Temp.Length - (Temp.Length - j)];
                 for (int i = 0; i < Arr.Length; i++)
                     Arr[i] = Temp[i];
+                Temp = new T[0];
             }
             catch { throw new Exception("The index is out of range!"); }
         }
@@ -203,6 +207,7 @@ namespace DynamicArray
                     if (!bV)
                         break;
                 }
+                Temp = new T[0];
             }
             catch { throw new Exception("The array is unsortable!"); }
         }
@@ -221,6 +226,7 @@ namespace DynamicArray
             {
                 Arr[i] = Temp[i];
             }
+            Temp = new T[0];
         }
 
         /*
@@ -246,6 +252,7 @@ namespace DynamicArray
             Arr = new T[Temp.Length + Arr2.Arr.Length];
             for (int i = 0; i < this.Temp.Length; i++) { Arr[i] = Temp[i]; }
             for (int i = this.Temp.Length; i < Arr.Length; i++) { Arr[i] = Temp[i - Temp.Length]; }
+            Temp = new T[0];
         }
     }
 }

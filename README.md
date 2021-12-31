@@ -20,8 +20,14 @@ array    : is the array name<br>
 size     : is the default size in int type, if you don't know what size you need use 0 as a empty array</pre><br>
 
 ## Array functions
-1. Push_front and push_back functions <br><br>
+1. Push_front and push_back functions <br>
 ```array.push_front(value1);``` <br>
-*add the value1 at the front of the array*<br><br>
+*Add the value1 at the front of the array*<br><br>
 ```array.push_back(value2);```<br>
-*add the value2 at the back of the array*<br><br>
+*Add the value2 at the back of the array*<br><br>
+
+2. Insert function <br>
+```array.insert(index, value);``` <br>
+*Set the value at index index for value*<br><br>
+```array.insert(-1, value);```<br>
+*Set the value at the last index for value*<br><br>

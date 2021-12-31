@@ -128,3 +128,6 @@ namespace Test
 100
 0
 ```
+## License
+**The MIT License** <br><br>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

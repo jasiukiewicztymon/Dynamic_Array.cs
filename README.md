@@ -45,3 +45,29 @@ size     : is the default size in int type, if you don't know what size you need
 *Erase all values from indexstart to indexend, including the values at indexstart and indexend*<br><br>
 ```array.remove(indexstart, -1);```<br>
 *Erase all values from indexstart to the end of the array, including the values at indexstart and the last value*<br><br>
+
+5. At functions <br>
+```array.at(index);``` <br>
+*Return the value at the index*<br><br>
+
+6. Fill functions <br>
+```array.fill(indexstart, indexend, value);``` <br>
+*Replace all index in array from indexstart to indexend by the value, including the indexstart and indexend*<br><br>
+
+7. Copy and sort functions <br>
+```array.copy(array2);``` <br>
+*Copy the array2 to the array*<br><br>
+```array.sort();``` <br>
+*Sort the array*<br><br>
+
+8. Reverse functions <br>
+```array.reverse();``` <br>
+*Return the reversed array*<br><br>
+
+9. Find functions <br>
+```array.find(value);``` <br>
+*Return the first index of the value*<br><br>
+
+10. Add functions <br>
+```array.add(array2);``` <br>
+*Add the array2 to the array*<br><br>

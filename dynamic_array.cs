@@ -2,7 +2,7 @@ using System;
 
 namespace DynamicArray
 {
-    class dynamicarray<T>
+    class DynamicArray<T>
     {
         /*
         Creating new array to manage all datas 
@@ -10,14 +10,14 @@ namespace DynamicArray
 
         private T[] Arr, Temp;
         
-        public dynamicarray(int size) { Arr = new T[size]; }
+        public DynamicArray(int size) { Arr = new T[size]; }
 
         /*
-        dynamicarray.push_front(value) add value on front 
-        dynamicarray.push_back(value) add value on back
+        DynamicArray.PushFront(value) Add value on front 
+        DynamicArray.PushBack(value) Add value on back
         */
         
-        public void push_front(T value)
+        public void PushFront(T value)
         {
             try
             {
@@ -32,7 +32,7 @@ namespace DynamicArray
             catch { throw new Exception("Invalide type of appeneded element!"); }
         }
        
-        public void push_back(dynamic value)
+        public void PushBack(T value)
         {
             try
             {
@@ -48,12 +48,12 @@ namespace DynamicArray
         }
 
         /*
-        dynamicarray.insert(index, value) insert the value at the index, in case of invalide index or invalide type of value show error message
+        DynamicArray.Insert(index, value) Insert the value At the index, in case of invalide index or invalide type of value show error message
 
-        * use -1 as index to insert value in the last element
+        * use -1 as index to Insert value in the last element
         */
 
-        public void insert(int index, dynamic value)
+        public void Insert(int index, T value)
         {
             try
             {
@@ -65,23 +65,23 @@ namespace DynamicArray
         }
 
         /*
-        dynamicarray.Size() return the size of the array
+        DynamicArray.Size() return the size of the array
         */
 
-        public int Size() { return Arr.Length; }
+        public int Size => Arr.Length;
 
         /*
-        dynamicarray.Clear() remove all value and reset the array
+        DynamicArray.Clear() Remove all value and reset the array
         */
 
         public void Clear() { Arr = new T[0]; }
 
         /*
-        dynamicarray.remove(index) remove the value at index
-        dynamicarray.remove(indexstart, indexend) remove all between the values from indexstart to indexend
+        DynamicArray.Remove(index) Remove the value At index
+        DynamicArray.Remove(indexstart, indexend) Remove all between the values from indexstart to indexend
         */
 
-        public void remove(int index)
+        public void Remove(int index)
         {
             try
             {
@@ -105,7 +105,7 @@ namespace DynamicArray
             catch { throw new Exception("The index is out of range!"); }
         }
 
-        public void remove(int indexstart, int indexend)
+        public void Remove(int indexstart, int indexend)
         {
             try
             {
@@ -132,19 +132,19 @@ namespace DynamicArray
         }
 
         /*
-        dynamicarray.at(index) return the value at the index. Here are some tricks:
-        dynamicarray.at(-1) return the last value
-        dynamicarray.at(x) return the value at index x
-        dynamicarray.at(dynamicarray.size()) return error "out_of_range"
+        DynamicArray.At(index) return the value At the index. Here are some tricks:
+        DynamicArray.At(-1) return the last value
+        DynamicArray.At(x) return the value At index x
+        DynamicArray.At(DynamicArray.size()) return error "out_of_range"
         */
 
-        public T at(int index) { if (index == -1) index = Arr.Length - 1;  return this.Arr[index]; }
+        public T At(int index) { if (index == -1) index = Arr.Length - 1;  return this.Arr[index]; }
 
         /*
-        dynamicarray.fill(indexstart, indexend, value) change all the values in the array between those index, including it for the new value in params
+        DynamicArray.Fill(indexstart, indexend, value) change all the values in the array between those index, including it for the new value in params
         */
 
-        public void fill(int indexstart, int indexend, dynamic value)
+        public void Fill(int indexstart, int indexend, T value)
         {
             try
             {
@@ -154,35 +154,35 @@ namespace DynamicArray
                     indexstart = Arr.Length - 1;
                 for (int i = indexstart; i <= indexend; i++)
                 {
-                    this.insert(i, value);
+                    this.Insert(i, value);
                 }
             }
             catch { throw new Exception("The index is out of range!"); }
         }
 
         /*
-        dynamicarr1.copy(dynamicarr2) copy the second arr to the first arr
+        dynamicarr1.Copy(dynamicarr2) Copy the second arr to the first arr
         */
 
-        public void copy(dynamicarray<T> Arr2)
+        public void Copy(DynamicArray<T> Arr2)
         {
-            Arr = new T[Arr2.Size()];
+            Arr = new T[Arr2.Size];
             for (int i = 0; i < Arr.Length; i++) { Arr[i] = Arr2.Arr[i]; }
         }
 
         /*
-        dynamicarray.sort() sort the array
+        DynamicArray.Sort() Sort the array
         */
 
-        public void sort()
+        public void Sort()
         {
             try
             {
                 bool bV;
-                for (int i = 0; i < this.Size() - 1; i++)
+                for (int i = 0; i < this.Size - 1; i++)
                 {
                     bV = false;
-                    for (int j = 0; j < this.Size() - i - 1; j++)
+                    for (int j = 0; j < this.Size - i - 1; j++)
                     {
                         int k = 0;
                         string str1 = Arr[j].ToString(), str2 = Arr[j + 1].ToString();
@@ -213,16 +213,16 @@ namespace DynamicArray
         }
 
         /*
-        dynamicarray.reverse() reverse all the values in the array 
+        DynamicArray.Reverse() Reverse all the values in the array 
         */
-        public void reverse()
+        public void Reverse()
         {
-            Temp = new T[this.Size()];
-            for (int i = this.Size() - 1; i >= 0; i--)
+            Temp = new T[this.Size];
+            for (int i = this.Size - 1; i >= 0; i--)
             {
-                Temp[i] = Arr[this.Size() - i - 1];
+                Temp[i] = Arr[this.Size - i - 1];
             }
-            for (int i = 0; i < this.Size(); i++)
+            for (int i = 0; i < this.Size; i++)
             {
                 Arr[i] = Temp[i];
             }
@@ -230,9 +230,9 @@ namespace DynamicArray
         }
 
         /*
-        dynamicarray.find(value) return the index of the array, if the value is not found the returned index is -1
+        DynamicArray.Find(value) return the index of the array, if the value is not found the returned index is -1
         */
-        public int find(T value)
+        public int Find(T value)
         {
             for (int i = 0; i < Arr.Length; i++)
             {
@@ -243,9 +243,9 @@ namespace DynamicArray
         }
 
         /*
-        dynamicarray.add(dynamicarray2) add to the dynamicarray the dynamicarray2 
+        DynamicArray.Add(dynamicarray2) Add to the DynamicArray the dynamicarray2 
         */
-        public void add(dynamicarray<T> Arr2)
+        public void Add(DynamicArray<T> Arr2)
         {
             Temp = new T[this.Arr.Length];
             for (int i = 0; i < this.Arr.Length; i++) { Temp[i] = this.Arr[i]; }

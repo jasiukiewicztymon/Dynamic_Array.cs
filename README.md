@@ -84,33 +84,33 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            dynamicarray<int> array = new dynamicarray<int>(5);
-            for (int i = 0; i < array.Size(); i++)
-                array.insert(i, i);
+            DynamicArray<int> array = new DynamicArray<int>(5);
+            for (int i = 0; i < array.Size; i++)
+                array.Insert(i, i);
 
-            dynamicarray<int> array2 = new dynamicarray<int>(0); ;
-            array2.copy(array);
-            array2.add(array);
+            DynamicArray<int> array2 = new DynamicArray<int>(0); ;
+            array2.Copy(array);
+            array2.Add(array);
 
-            array2.sort();
-            array2.reverse();
-            array2.remove(6, -1);
-            array2.fill(0, 1, -3);
-            array2.push_front(-10);
-            array2.push_back(100);
-            int index = array2.find(-3);
+            array2.Sort();
+            array2.Reverse();
+            array2.Remove(6, -1);
+            array2.Fill(0, 1, -3);
+            array2.PushFront(-10);
+            array2.PushBack(100);
+            int index = array2.Find(-3);
 
             Console.WriteLine(index);
-            for (int i = 0; i < array2.Size(); i++)
+            for (int i = 0; i < array2.Size; i++)
             {
-                Console.WriteLine(array2.at(i));
+                Console.WriteLine(array2.At(i));
             }
 
             array2.Clear();
-            Console.WriteLine(array2.Size());
+            Console.WriteLine(array2.Size);
 
             Console.ReadKey();
-        }    
+        }
     }
 }
 ```

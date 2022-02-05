@@ -88,7 +88,7 @@ namespace Test
             for (int i = 0; i < array.Size; i++)
                 array.Insert(i, i);
 
-            DynamicArray<int> array2 = new DynamicArray<int>(0); ;
+            DynamicArray<int> array2 = new DynamicArray<int>(0);
             array2.Copy(array);
             array2.Add(array);
 

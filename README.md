@@ -74,7 +74,7 @@ size     : is the default size in int type, if you don't know what size you need
 
 ## Code example
 
-```
+```cs
 using System;
 using DynamicArray;
 
